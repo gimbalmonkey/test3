@@ -14,11 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="libs/spectrum/spectrum.css">
 	<link rel="stylesheet" type="text/css" href="libs/jstree/themes/mixed/style.css">
 	<link rel="stylesheet" type="text/css" href="libs/Cesium/Widgets/CesiumWidget/CesiumWidget.css">
-	<!-- <link href="https://cesiumjs.org/releases/1.57/Build/Cesium/Widgets/widgets.css" rel="stylesheet"> -->
-	<style>
-      @import url(https://cesiumjs.org/releases/1.44/Build/Cesium/Widgets/widgets.css);
-      #cesiumContainer {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
-    </style>
+	<link href="https://cesiumjs.org/releases/1.57/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 </head>
 
 
@@ -38,8 +34,7 @@
 	<script src="build/potree/potree.js"></script>
 	<script src="libs/plasio/js/laslaz.js"></script>
 	<script src="libs/Cesium/Cesium.js"></script>
-	<!-- <script src="https://cesiumjs.org/releases/1.57/Build/Cesium/Cesium.js"></script> -->
-	<script src="https://cesiumjs.org/releases/1.44/Build/Cesium/Cesium.js"></script>
+	<script src="https://cesiumjs.org/releases/1.57/Build/Cesium/Cesium.js"></script>
 
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
 	<!-- INCLUDE SETTINGS HERE -->
@@ -54,7 +49,7 @@
 
 
 <script>
-	// Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1Y2MwYjZhMS0wOTQ1LTRmMWItYTQ2YS01M2E0YmZmZTI4MDgiLCJpZCI6MTE2NTIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NTk1NDM3NTJ9.eqYdn2-8qsSMGPWM5vpZJBctI_ltWBmWcCOiRpNa2CY';
+	Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1Y2MwYjZhMS0wOTQ1LTRmMWItYTQ2YS01M2E0YmZmZTI4MDgiLCJpZCI6MTE2NTIsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NTk1NDM3NTJ9.eqYdn2-8qsSMGPWM5vpZJBctI_ltWBmWcCOiRpNa2CY';
 	window.cesiumViewer = new Cesium.Viewer('cesiumContainer', {
 		useDefaultRenderLoop: false,
 		animation: false,
@@ -67,9 +62,8 @@
 		selectionIndicator: false,
 		timeline: false,
 		navigationHelpButton: false,
-		terrainProvider :new Cesium.CesiumTerrainProvider({
-        url : 'https://api.maptiler.com/tiles/terrain-quantized-mesh/?key=AkShVrAYH6327IBRkx1W',
-        requestVertexNormals : true
+		terrainProvider : new Cesium.CesiumTerrainProvider({
+        url: Cesium.IonResource.fromAssetId(1)
     })
 });
 
